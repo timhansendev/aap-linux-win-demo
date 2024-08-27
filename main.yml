@@ -1,6 +1,9 @@
 ---
 - name: Enforce configuration across linux and windows hosts
   hosts: all
-  roles:
-    - linux
-    - windows
+  import_role:
+    name: linux
+    when: ansible_facts['distribution'] == "RedHat"
+  import_role:
+    name: windows
+    when: ansible_facts['distribution'] == "Windows"
