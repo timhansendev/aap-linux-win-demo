@@ -18,7 +18,7 @@ include(file="/etc/rsyslog.d/*.conf" mode="optional")
 
 #### RULES ####
 {% for rule in rules %} 
-{{ rule }}
+{{ rules[{{ rule }}] -}}
 
 {% endfor %}
 
