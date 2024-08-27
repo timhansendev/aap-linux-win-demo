@@ -1,2 +1,14 @@
 ---
 # vars file for linux
+module_imuxsock: 'module(load="imuxsock" SysSock.Use="off")'
+module_imjournal: 'module(load="imjournal" UsePid="system" StateFile="imjournal.state")'
+work_location: "/var/lib/rsyslog"
+
+rules:
+  messages: '*.info;mail.none;authpriv.none;cron.none                /var/log/messages'
+  authpriv: 'authpriv.*                                              /var/log/secure'
+  mail: 'mail.*                                                  -/var/log/maillog'
+  cron: 'cron.*                                                  /var/log/cron'
+  emergency: '*.emerg                                                 :omusrmsg:*'
+  critical: 'uucp,news.crit                                          /var/log/spooler'
+  boot: 'local7.*                                                /var/log/boot.log'
