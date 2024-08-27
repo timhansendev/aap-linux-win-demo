@@ -2,5 +2,5 @@
 - name: Enforce configuration across linux and windows hosts
   hosts: all
   roles:
-    - include_role: linux
-    - include_role: windows
+    - linux
+    - windows
