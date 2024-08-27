@@ -1,7 +1,5 @@
 ---
-# tasks file for linux
 - name: Enforce linux host configuration
-  hosts: linux
   tasks:
     - name: Apply rsyslog configuration
       src: templates/rsyslog.j2
