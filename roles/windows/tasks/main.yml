@@ -19,8 +19,7 @@
     start_mode: disabled
 
 
-- name: Ensure that NETBIOS is not running and disabled. 
+- name: Ensure the Firewall is running.
   ansible.windows.win_service:
     name: "Windows Defender Firewall"
     state: started
-    start_mode: auto
