@@ -11,3 +11,15 @@
 - name: Display all services
   debug:
     var: service_info
+
+- name: Ensure that Windows Defender Firewall is running. 
+  ansible.windows.win_service:
+    name: "Windows Defender Firewall"
+    state: started
+    start_mode: auto
+
+- name: Ensure that NETBIOS is not running and disabled. 
+  ansible.windows.win_service:
+    name: "TCP/IP NetBIOS Helper"
+    state: stopped
+    start_mode: disabled
