@@ -24,4 +24,3 @@
     name: "Windows Defender Firewall"
     state: started
     start_mode: auto
-  become: true
