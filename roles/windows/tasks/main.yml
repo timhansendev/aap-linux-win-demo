@@ -12,14 +12,6 @@
   debug:
     var: service_info
 
-- name: Enable firewall for Domain, Public and Private profiles
-  ansible.windows.win_firewall:
-    state: enabled
-    profiles:
-      - Domain
-      - Private
-      - Public
-
 - name: Ensure that NETBIOS is not running and disabled. 
   ansible.windows.win_service:
     name: "TCP/IP NetBIOS Helper"
