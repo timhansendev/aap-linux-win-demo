@@ -3,4 +3,3 @@
   hosts: linux
   roles:
     - linux
-    - redhat.rhel_system_roles.bootloader
