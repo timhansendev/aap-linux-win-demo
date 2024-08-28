@@ -1,4 +1,6 @@
 ---
 # tasks file for windows
 - name: Gather facts about windows
-  setup:
+  debug:
+    var: hostvars[inventory_hostname]
+    verbosity: 4
