@@ -1,4 +1,5 @@
 ---
 - name: Enforce configuration across linux hosts
   hosts: win
-  roles: windows
+  roles: 
+    - windows
