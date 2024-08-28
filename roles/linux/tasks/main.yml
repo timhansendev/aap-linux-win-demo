@@ -11,4 +11,4 @@
   ansible.builtin.lineinfile:
     path: /etc/default/grub
     state: absent
-    regexp: "GRUB_CMDLINE_LINUX='ipv6.disable=1'"
+    regexp: 'ipv6.disable=1'
