@@ -3,3 +3,15 @@
 - name: Gather facts about windows
   debug:
     var: hostvars[inventory_hostname]
+
+- name: Disable NetBIOS System wide
+  windows.win_netbios:
+    state: disabled
+
+- name: Check which services are running on the server
+  ansible.windows.win_service_info:
+  register: service_info
+
+- name: Display all services
+  debug:
+    var: service_info
