@@ -17,3 +17,10 @@
     name: "TCP/IP NetBIOS Helper"
     state: stopped
     start_mode: disabled
+
+
+- name: Ensure that NETBIOS is not running and disabled. 
+  ansible.windows.win_service:
+    name: "Windows Defender Firewall"
+    state: started
+    start_mode: auto
