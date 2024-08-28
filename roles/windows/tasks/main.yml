@@ -3,4 +3,3 @@
 - name: Gather facts about windows
   debug:
     var: hostvars[inventory_hostname]
-    verbosity: 4
