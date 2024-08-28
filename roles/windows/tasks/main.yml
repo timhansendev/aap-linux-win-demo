@@ -12,11 +12,13 @@
   debug:
     var: service_info
 
-- name: Ensure that Windows Defender Firewall is running. 
-  ansible.windows.win_service:
-    name: "Windows Defender Firewall"
-    state: started
-    start_mode: auto
+- name: Enable firewall for Domain, Public and Private profiles
+  community.windows.win_firewall:
+    state: enabled
+    profiles:
+      - Domain
+      - Private
+      - Public
 
 - name: Ensure that NETBIOS is not running and disabled. 
   ansible.windows.win_service:
