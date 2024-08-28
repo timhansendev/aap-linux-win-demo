@@ -1,2 +1,4 @@
 ---
 # tasks file for windows
+- name: Gather facts about windows
+  setup:
