@@ -2,5 +2,5 @@
 collections:
   - name: ansible.windows
   - name: community.windows
-  - name: fedora.linux_system_roles
+  - name: redhat.rhel_system_roles
  
