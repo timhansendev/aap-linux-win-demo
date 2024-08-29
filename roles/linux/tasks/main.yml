@@ -5,10 +5,19 @@
     dest: /etc/rsyslog.conf
     owner: root
     group: root
-    mode: u=rw,g=r,u=r
+    mode: u=rw,g=r,o=r
 
-- name: Make sure ipv6 is disabled in the kernel options in GRUB.
-  ansible.builtin.replace:
-    path: /etc/default/grub
-    regexp: 'ipv6.disable=1'
-    replace: ''
+#- name: Make sure ipv6 is disabled in the kernel options in GRUB.
+#  ansible.builtin.replace:
+#    path: /etc/default/grub
+#    regexp: 'ipv6.disable=1'
+#    replace: ''
+#
+- name: Apply GRUB template config
+  template:
+    src: templates/grub.j2
+    dest: /etc/default/grub
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  
