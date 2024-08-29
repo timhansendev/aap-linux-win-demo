@@ -8,7 +8,7 @@
     mode: u=rw,g=r,u=r
 
 - name: Make sure ipv6 is disabled in the kernel options in GRUB.
-  ansible.builtin.lineinfile:
+  ansible.builtin.replace:
     path: /etc/default/grub
-    state: absent
     regexp: 'ipv6.disable=1'
+    replace: ''
